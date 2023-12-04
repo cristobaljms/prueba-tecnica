@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Airtable from "airtable";
 import { useParams } from "react-router-dom";
 import ArrowBack from "./assets/arrow_back_icon.svg";
+import { useNavigate } from "react-router-dom";
 
 var base = new Airtable({
   apiKey:
@@ -10,6 +11,7 @@ var base = new Airtable({
 
 function ResultsPanel() {
   const params = useParams();
+  const navigate = useNavigate();
   const [data, setData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
   const [companies, setCompanies] = useState([]);
@@ -48,16 +50,20 @@ function ResultsPanel() {
     setFilteredData(filteredRecords);
   };
 
+  const handleBack = () => {
+    navigate("/");
+  };
+
   return (
     <main className="min-h-screen">
       <div className="skewed p-4 sm:p-12 flex gap-4 justify-start items-center">
         <div className="text-white bg-white rounded-full">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-0 lg:pointer-events-auto"
-            href="/"
+          <button
+            className="flex place-items-center gap-2 p-0"
+            onClick={handleBack}
           >
             <img src={ArrowBack} alt="Back" width={50} height={50} />
-          </a>
+          </button>
         </div>
         <div className="bg-white py-4 px-6 rounded-3xl w-full max-w-2xl mx-auto">
           <div className="flex w-full gap-4">
