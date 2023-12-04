@@ -23,7 +23,7 @@ function App() {
 
   return (
     <section className="curved">
-      <main className="min-h-screen p-24">
+      <main className="min-h-screen px-4 py-12 sm:py-24 sm:px-12 lg:px-24">
         <div className="bg-white py-4 px-6 rounded-3xl w-full max-w-2xl mx-auto">
           <div className="flex w-full gap-4">
             <input

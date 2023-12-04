@@ -50,7 +50,7 @@ function ResultsPanel() {
 
   return (
     <main className="min-h-screen">
-      <div className="skewed p-12 flex gap-4 justify-start items-center">
+      <div className="skewed p-4 sm:p-12 flex gap-4 justify-start items-center">
         <div className="text-white bg-white rounded-full">
           <a
             className="pointer-events-none flex place-items-center gap-2 p-0 lg:pointer-events-auto"
